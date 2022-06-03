@@ -1,0 +1,17 @@
+﻿component PlayerLink {
+	player_ref Player;
+}
+
+component MovementComp {
+	FP speed;
+	FP jumpForce;
+}
+
+component BombMarkComp{
+	bool bombMark;
+	FP timer;
+}
+
+singleton component GameConfigRefComp{
+	asset_ref<GameParameter> gameParameter;
+}
