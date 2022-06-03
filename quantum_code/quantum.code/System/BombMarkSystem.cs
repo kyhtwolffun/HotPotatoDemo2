@@ -12,6 +12,7 @@ namespace Quantum
         {
             public EntityRef Entity;
             public BombMarkComp* bombMark;
+            public PlayerLink* link;
         }
 
         public override void Update(Frame f, ref Filter filter)
@@ -24,24 +25,23 @@ namespace Quantum
             {
                 Log.Info("Explode");
                 filter.bombMark->bombMark = true;
-                f.Events.Explode();
+                f.Events.Explode(filter.link->Player);
                 f.Destroy(filter.Entity);
             }
         }
 
         public void OnCollisionEnter3D(Frame f, CollisionInfo3D info)
         {
-            var set = ComponentSet.Create<BombMarkComp, MovementComp>();
-
-            if (f.Has<BombMarkComp>(info.Entity) && !f.Has<BombMarkComp>(info.Other) && f.Has<MovementComp>(info.Other))
+            if (f.Has<BombMarkComp>(info.Entity) && !f.Has<BombMarkComp>(info.Other) && f.Has<PlayerLink>(info.Other))
             {
                 f.Add<BombMarkComp>(info.Other);
-                f.Unsafe.TryGetPointer<BombMarkComp>(info.Other, out var bombMarkOther);
-                f.Unsafe.TryGetPointer<BombMarkComp>(info.Other, out var bombMarkEnity);
+                if (f.Unsafe.TryGetPointer<BombMarkComp>(info.Other, out var bombMarkOther) &&
+                    f.Unsafe.TryGetPointer<BombMarkComp>(info.Entity, out var bombMarkEnity))
+                {
+                    bombMarkOther->timer = bombMarkEnity->timer;
+                    f.Remove<BombMarkComp>(info.Entity);
+                }
 
-                bombMarkOther->timer = bombMarkEnity->timer;
-
-                f.Remove<BombMarkComp>(info.Entity);
             }
         }
     }

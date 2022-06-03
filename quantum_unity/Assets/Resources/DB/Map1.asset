@@ -84,6 +84,31 @@ MonoBehaviour:
     MapEntities: []
   Prototypes:
   - BombMarkComp: []
+    GameConfigRefComp:
+    - gameParameter:
+        Id:
+          Value: 700112445410331851
+    MovementComp: []
+    PlayerLink: []
+    CharacterController2D: []
+    CharacterController3D: []
+    NavMeshAvoidanceAgent: []
+    NavMeshAvoidanceObstacle: []
+    NavMeshPathfinder: []
+    NavMeshSteeringAgent: []
+    PhysicsBody2D: []
+    PhysicsBody3D: []
+    PhysicsCollider2D: []
+    PhysicsCollider3D: []
+    PhysicsCallbacks2D: []
+    PhysicsCallbacks3D: []
+    Transform2D: []
+    Transform2DVertical: []
+    Transform3D: []
+    View: []
+    PhysicsJoints2D: []
+    PhysicsJoints3D: []
+  - BombMarkComp: []
     GameConfigRefComp: []
     MovementComp: []
     PlayerLink: []
@@ -268,31 +293,6 @@ MonoBehaviour:
           RawValue: 0
         Z:
           RawValue: 3254162
-    View: []
-    PhysicsJoints2D: []
-    PhysicsJoints3D: []
-  - BombMarkComp: []
-    GameConfigRefComp:
-    - gameParameter:
-        Id:
-          Value: 700112445410331851
-    MovementComp: []
-    PlayerLink: []
-    CharacterController2D: []
-    CharacterController3D: []
-    NavMeshAvoidanceAgent: []
-    NavMeshAvoidanceObstacle: []
-    NavMeshPathfinder: []
-    NavMeshSteeringAgent: []
-    PhysicsBody2D: []
-    PhysicsBody3D: []
-    PhysicsCollider2D: []
-    PhysicsCollider3D: []
-    PhysicsCallbacks2D: []
-    PhysicsCallbacks3D: []
-    Transform2D: []
-    Transform2DVertical: []
-    Transform3D: []
     View: []
     PhysicsJoints2D: []
     PhysicsJoints3D: []

@@ -1,1 +1,3 @@
-﻿event Explode {}
+﻿event Explode {
+	player_ref player;
+}

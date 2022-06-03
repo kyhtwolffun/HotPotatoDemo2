@@ -9,6 +9,9 @@ namespace Quantum
 {
     public partial class GameParameter
     {
+        public FP gameStartDelay;
+        public FP restTimeBetweenEachRound;
+
         public FP bombExplodeTime;
         public FP matchTime;
         public List<BombCount> bombCount;

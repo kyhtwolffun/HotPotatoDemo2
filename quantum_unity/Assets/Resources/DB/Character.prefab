@@ -355,6 +355,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: b219fedd0053394488d5743f60f04d03, type: 2}
   meshRenderer: {fileID: 7541081290300053514}
+  entityView: {fileID: 7541081290413922767}
 --- !u!114 &-4176181056172396170
 MonoBehaviour:
   m_ObjectHideFlags: 0

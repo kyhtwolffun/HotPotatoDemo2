@@ -1,0 +1,3 @@
+﻿signal StartGame ();
+
+signal RandomBombForPlayers ();

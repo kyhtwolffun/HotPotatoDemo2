@@ -4,42 +4,14 @@ using Photon.Deterministic;
 
 namespace Quantum
 {
-    public unsafe class RandomBombSystem : SystemMainThreadFilter<RandomBombSystem.Filter>, ISignalOnPlayerDataSet
+    public unsafe class RandomBombSystem : SystemSignalsOnly, ISignalRandomBombForPlayers
     {
-        public struct Filter
+        public void RandomBombForPlayers(Frame f)
         {
-            public EntityRef entity;
-            public PlayerLink* link;
-        }
-
-        public override void Update(Frame f, ref Filter filter)
-        {
-            //throw new NotImplementedException();
-        }
-
-        public void OnPlayerDataSet(Frame f, PlayerRef player)
-        {
-            var data = f.GetPlayerData(player);
-            var prototype = f.FindAsset<EntityPrototype>(data.characterPrototype.Id);
-            var e = f.Create(prototype);
-
-            if (f.Unsafe.TryGetPointer<PlayerLink>(e, out var pl))
-            {
-                pl->Player = player;
-            }
-
-            if (f.Unsafe.TryGetPointer<Transform3D>(e, out var t))
-            {
-                t->Position.X = player._index;
-            }
-
-            //var gameConfig = f.Filter<GameConfigRefComp>();
             var gameConfigRefComp = f.GetSingleton<GameConfigRefComp>();
             var gameConfigRefAsset = f.FindAsset<GameParameter>(gameConfigRefComp.gameParameter.Id);
 
-            //var players = f.GetComponentIterator<PlayerLink>();
             var playerCount = f.ComponentCount<PlayerLink>();
-
             var bombCount = f.ComponentCount<BombMarkComp>();
 
             for (int i = 0; i < gameConfigRefAsset.bombCount.Count; i++)
@@ -68,6 +40,7 @@ namespace Quantum
 
                 int playerIndex = 0;
 
+                //TODO: Need optimizing
                 randomInt:
                 var randInt = rand->NextInclusive(1, player);
 
@@ -100,6 +73,6 @@ namespace Quantum
             {
                 f.Remove<BombMarkComp>(e);
             }
-        }
+        }      
     }
 }
