@@ -84,10 +84,12 @@ MonoBehaviour:
     MapEntities: []
   Prototypes:
   - BombMarkComp: []
+    CountDownTimerComp: []
     GameConfigRefComp:
     - gameParameter:
         Id:
           Value: 700112445410331851
+    GamePhaseComp: []
     MovementComp: []
     PlayerLink: []
     CharacterController2D: []
@@ -109,7 +111,40 @@ MonoBehaviour:
     PhysicsJoints2D: []
     PhysicsJoints3D: []
   - BombMarkComp: []
+    CountDownTimerComp:
+    - timer:
+        RawValue: 0
+      timeSup:
+        Value: 0
     GameConfigRefComp: []
+    GamePhaseComp:
+    - gamePhase:
+        Value: 0
+      currentRound: 0
+    MovementComp: []
+    PlayerLink: []
+    CharacterController2D: []
+    CharacterController3D: []
+    NavMeshAvoidanceAgent: []
+    NavMeshAvoidanceObstacle: []
+    NavMeshPathfinder: []
+    NavMeshSteeringAgent: []
+    PhysicsBody2D: []
+    PhysicsBody3D: []
+    PhysicsCollider2D: []
+    PhysicsCollider3D: []
+    PhysicsCallbacks2D: []
+    PhysicsCallbacks3D: []
+    Transform2D: []
+    Transform2DVertical: []
+    Transform3D: []
+    View: []
+    PhysicsJoints2D: []
+    PhysicsJoints3D: []
+  - BombMarkComp: []
+    CountDownTimerComp: []
+    GameConfigRefComp: []
+    GamePhaseComp: []
     MovementComp: []
     PlayerLink: []
     CharacterController2D: []
@@ -203,7 +238,9 @@ MonoBehaviour:
     PhysicsJoints2D: []
     PhysicsJoints3D: []
   - BombMarkComp: []
+    CountDownTimerComp: []
     GameConfigRefComp: []
+    GamePhaseComp: []
     MovementComp: []
     PlayerLink: []
     CharacterController2D: []

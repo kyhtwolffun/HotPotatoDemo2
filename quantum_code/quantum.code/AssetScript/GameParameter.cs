@@ -13,7 +13,8 @@ namespace Quantum
         public FP restTimeBetweenEachRound;
 
         public FP bombExplodeTime;
-        public FP matchTime;
+        //public FP matchTime;
+        public int roundCount;
         public List<BombCount> bombCount;
     }
 

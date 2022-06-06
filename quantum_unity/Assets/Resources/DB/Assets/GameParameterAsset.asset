@@ -17,16 +17,19 @@ MonoBehaviour:
       Path: Resources/DB/Assets/GameParameterAsset
       Guid:
         Value: 700112445410331851
+    gameStartDelay:
+      RawValue: 196608
+    restTimeBetweenEachRound:
+      RawValue: 131072
     bombExplodeTime:
       RawValue: 327680
-    matchTime:
-      RawValue: 5898240
+    roundCount: 2
     bombCount:
     - minPlayer: 20
       bomb: 2
     - minPlayer: 6
       bomb: 3
-    - minPlayer: 4
+    - minPlayer: 3
       bomb: 2
     - minPlayer: 1
       bomb: 1

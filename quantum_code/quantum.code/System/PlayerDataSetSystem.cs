@@ -23,8 +23,6 @@ namespace Quantum
             {
                 t->Position.X = player._index;
             }
-
-            f.Signals.StartGame();
         }
     }
 }

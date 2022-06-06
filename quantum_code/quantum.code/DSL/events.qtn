@@ -1,3 +1,10 @@
 ﻿event Explode {
 	player_ref player;
 }
+
+event BombMark
+{
+	player_ref player;
+	bool display;
+	FP time;
+}

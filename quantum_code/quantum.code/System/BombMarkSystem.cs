@@ -19,12 +19,14 @@ namespace Quantum
         {
             if (filter.bombMark->timer > 0)
             {
+                Log.Info("Bomb: countdown");
                 filter.bombMark->timer -= f.DeltaTime;
+                f.Events.BombMark(filter.link->Player, true, filter.bombMark->timer);
             }
-            else if (!filter.bombMark->bombMark)
+            else if (!filter.bombMark->isExploded)
             {
-                Log.Info("Explode");
-                filter.bombMark->bombMark = true;
+                Log.Info("Bomb: Explode");
+                filter.bombMark->isExploded = true;
                 f.Events.Explode(filter.link->Player);
                 f.Destroy(filter.Entity);
             }
@@ -40,6 +42,7 @@ namespace Quantum
                 {
                     bombMarkOther->timer = bombMarkEnity->timer;
                     f.Remove<BombMarkComp>(info.Entity);
+                    f.Events.BombMark(f.Unsafe.GetPointer<PlayerLink>(info.Entity)->Player, false, 0);
                 }
 
             }

@@ -1,0 +1,5 @@
+﻿enum GamePhase : Int16
+{
+	startGame,
+	spreadBomb,
+}

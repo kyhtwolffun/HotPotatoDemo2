@@ -25,6 +25,9 @@ namespace Quantum {
         new MovementSystem(),
         new BombMarkSystem(),
         new RandomBombSystem(),
+        new PlayerDataSetSystem(),
+        new GameTimingSystem(),
+        new CountDownTimerSystem(),
       };
     }
   }

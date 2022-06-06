@@ -8,10 +8,20 @@ component MovementComp {
 }
 
 component BombMarkComp{
-	bool bombMark;
+	bool isExploded;
 	FP timer;
 }
 
 singleton component GameConfigRefComp{
 	asset_ref<GameParameter> gameParameter;
+}
+
+component CountDownTimerComp{
+	FP timer;
+	bool timeSup;
+}
+
+singleton component GamePhaseComp{
+	GamePhase gamePhase;
+	int currentRound;
 }

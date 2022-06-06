@@ -8,6 +8,7 @@ namespace Quantum
     {
         public void RandomBombForPlayers(Frame f)
         {
+            Log.Info("Bomb: begin random for players");
             var gameConfigRefComp = f.GetSingleton<GameConfigRefComp>();
             var gameConfigRefAsset = f.FindAsset<GameParameter>(gameConfigRefComp.gameParameter.Id);
 
@@ -55,6 +56,7 @@ namespace Quantum
                         }
                         else
                         {
+                            Log.Info("Bomb: add bomb mark comp");
                             f.Add<BombMarkComp>(e);
                             f.Unsafe.TryGetPointer<BombMarkComp>(e, out var bombMark);
                             bombMark->timer = bombTimer;
